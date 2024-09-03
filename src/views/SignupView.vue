@@ -77,6 +77,7 @@ export default {
         gotoLogin() {
             this.$router.push('/login')
         },
+        /*
         registerUser() {
             // post = execute a function signup, create 
             // put = edit data
@@ -103,7 +104,7 @@ export default {
                     this.$router.push("/login")
                     console.log(response.data)
                 })
-        }
+        }*/
     }
 }
 

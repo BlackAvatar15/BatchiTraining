@@ -44,6 +44,13 @@
               </v-btn>
             </v-col>
           </v-row>
+          <v-row gutters>
+            <v-col cols="12">
+              <v-btn size="x-large" style="background-color: black; color:white" @click="gotoTables">
+                See Tables
+              </v-btn>
+            </v-col>
+          </v-row>
         </v-col>
       </v-row>
     </v-col>
@@ -55,16 +62,16 @@ export default {
   name: 'HomeView',
   data() {
     return {
-
-
+      
+      
     }
   },
   created() {
 
   },
   methods: {
-    sayHelloUser() {
-      alert("HELLO USER")
+    gotoTables() {
+      this.$router.push("/tables")
     },
     goToLoginPage() {
       this.$router.push("/login");
