@@ -37,10 +37,14 @@
                         <v-text-field v-model="password" label="Password" placeholder="Enter your password"
                             type="password"></v-text-field>
                     </v-row>
+                    <v-row no-gutters class="mt-3">
+                        <v-text-field v-model="confirmpassword" label="Confirm Password" placeholder="Enter your password"
+                            type="password"></v-text-field>
+                    </v-row>
 
                     <v-row no-gutters class="mt-3">
                         <v-col cols="6">
-                            <v-btn @click="registerUser" style="background-color: black; color:white">
+                            <v-btn :disabled="submitting" @click="registerUser" style="background-color: white; color:black">
                                 Create Account
                             </v-btn>
                         </v-col>
@@ -71,12 +75,51 @@ export default {
             email: "",
             address: "",
             password: "",
+            confirmpassword: "",
+            submitting: false,
         }
     },
     methods: {
         gotoLogin() {
             this.$router.push('/login')
         },
+        registerUser() {
+            this.submitting = true;
+
+            // == equal
+            // != equal
+            // => equal or greater than
+            // =< equal or less than
+
+            
+            if(this.password != this.confirmpassword) {
+                alert("Password doesn't match! ");
+                return;
+            }
+
+            axios.post("http://localhost:8765/trainee-backend/api/user",
+                {
+                    "fullName": this.fullName,
+                    "email": this.email,
+                    "password": this.password,
+                    "address": this.address,
+                    "role": "USER"
+                },
+                {
+                    methods: "post",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                }
+            ).then((response) => {
+                alert("REGISTRATION COMPLETE");
+                this.submitting = false;
+                this.$router.push('/login')
+            }).catch((error) => {
+                alert("ERROR")
+                this.submitting = false;
+            })
+        }
         /*
         registerUser() {
             // post = execute a function signup, create 

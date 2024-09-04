@@ -86,6 +86,7 @@ const routes = [
     component: AddressView
   },
 
+
 ]
 
 const router = createRouter({

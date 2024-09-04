@@ -20,16 +20,18 @@
           </v-row>
 
           <v-row no-gutters class="mt-3">
-            <v-text-field label="Email address" placeholder="johndoe@gmail.com" type="email"></v-text-field>
+            <v-text-field v-model="email" label="Email address" placeholder="johndoe@gmail.com"
+              type="email"></v-text-field>
           </v-row>
 
           <v-row no-gutters class="mt-3">
-            <v-text-field label="Password" placeholder="Enter your password" type="password"></v-text-field>
+            <v-text-field v-model="password" label="Password" placeholder="Enter your password"
+              type="password"></v-text-field>
           </v-row>
 
           <v-row no-gutters class="mt-3">
             <v-col cols="6">
-              <v-btn @click="backtoHome" style="background-color: black; color:white">
+              <v-btn :disabled="submitting" @click="loginUser" style="background-color: black; color:white">
                 Login
               </v-btn>
             </v-col>
@@ -39,7 +41,7 @@
               </v-btn>
             </v-col>
           </v-row>
-          </v-card>
+        </v-card>
       </v-col>
       <!-- RIGHT -->
       <v-col cols="4">
@@ -50,20 +52,54 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: 'LoginView',
   data() {
     return {
-
+      email: "",
+      password: "",
+      submitting: false,
     }
   },
   methods: {
     backtoHome() {
       this.$router.push('/');
     },
-   sayHello() {
-      alert('Hello Caloy');
+
+    loginUser() {
+      this.submitting = true;
+      // axios.post(
+
+      // ).then((response) => {
+
+      // }).catch((err) => {
+
+      // })
+
+      axios.post("http://localhost:8765/trainee-backend/api/user/sign-in",
+        {
+          "email": this.email,
+          "password": this.password
+        },
+        {
+          methods: "post",
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      ).then((response) => {
+        this.submitting = false;
+        this.$router.push('/tables')
+      }).catch((error) => {
+        alert("ERROR")
+        this.submitting = false;
+      })
     },
+    /* sayHello() {
+      alert('Hello Caloy');
+    },*/
     gotoSignup() {
       this.$router.push('/signup')
     }
@@ -71,3 +107,5 @@ export default {
 
 } 
 </script>
+
+<style scoped></style>
