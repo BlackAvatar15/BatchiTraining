@@ -3,45 +3,38 @@
         <v-col cols="12">
             <v-row no-gutters>
                 <v-col cols="6">
-                    <v-row no-gutters>
-                        <v-col cols="12">
-                            <v-label>Product Name</v-label>
-                            <h3>{{ getProductDetailsData.brandName }}</h3>
+                    <v-row no-gutters class="text-start">
+                        <v-col cols="12"> 
+                            <h3> Product Name: {{ getProductDetailsData.brandName }}</h3>
 
                         </v-col>
-                        <v-col cols="12">
-                            <v-label>Model</v-label>
-                            <h3>{{ getProductDetailsData.model }}</h3>
+                        <v-col cols="12"> 
+                            <h3>Model: {{ getProductDetailsData.model }}</h3>
 
 
                         </v-col>
-                        <v-col cols="12">
-                            <v-label>RAM</v-label>
-                            <h3>{{ getProductDetailsData.ram }}</h3>
+                        <v-col cols="12"> 
+                            <h3>RAM: {{ getProductDetailsData.ram }}</h3>
 
 
                         </v-col>
-                        <v-col cols="12">
-                            <v-label>ROM</v-label>
-                            <h3>{{ getProductDetailsData.rom }}</h3>
+                        <v-col cols="12"> 
+                            <h3>ROM: {{ getProductDetailsData.rom }}</h3>
 
 
                         </v-col>
-                        <v-col cols="12">
-                            <v-label>PROCESSOR</v-label>
-                            <h3>{{ getProductDetailsData.processor }}</h3>
+                        <v-col cols="12"> 
+                            <h3>PROCESSOR: {{ getProductDetailsData.processor }}</h3>
 
 
                         </v-col>
-                        <v-col cols="12">
-                            <v-label>CAMERA</v-label>
-                            <h3>{{ getProductDetailsData.camera }}</h3>
+                        <v-col cols="12"> 
+                            <h3>CAMERA: {{ getProductDetailsData.camera }}</h3>
 
 
                         </v-col>
                         <v-col cols="12">
-                            <v-label>PRICE</v-label>
-                            <h3>{{ getProductDetailsData.price }}</h3>
+                            <h3>PRICE: {{ getProductDetailsData.price }}</h3>
 
                         </v-col>
                     </v-row>
