@@ -54,20 +54,31 @@
     </v-expand-transition>-->
 
         <v-container class="my-1">
-
             <v-layout row wrap>
                 <v-flex xs12 sm6 md4 lg3 v-for="person in team" :key="person.name">
                     <v-card color="grey" flat class="text-xs-center ma-3">
+
                         <v-responsive class="pt-4">
-                            <v-avatar size="100" class="grey lighten-2">
-                                <img :src="person.avatar">
-                            </v-avatar>
+                            
+                           <v-row>
+                            <v-col cols="4">
+                                <v-avatar size="100" class="grey lighten-2">
+                                    <img :src="person.avatar">
+                                </v-avatar>
+                            </v-col>
+                        </v-row>
+                    
+                            
                         </v-responsive>
-                        <v-card-text>
-                            <div class="subheading">{{ person.name }}</div>
-                            <div class="grey--text">{{ person.role }}</div>
-                            <div>{{ person.about }}</div>
-                        </v-card-text>
+                        <v-row>
+                        <v-col cols="8">
+                            <v-card-text>
+                                <div class="subheading">{{ person.name }}</div>
+                                <div class="grey--text">{{ person.role }}</div>
+                                <div>{{ person.about }}</div>
+                            </v-card-text>
+                        </v-col>
+                    </v-row>
                         <v-card-actions>
                             <v-btn flat color="white">
                                 <v-icon small left>message</v-icon>
@@ -88,14 +99,12 @@ export default {
     data() {
         return {
             team: [
-                { name: 'Ren', role: 'Front End', avatar: '/avatar-1.png', about: 'Studied BSIT at Cavite State University'},
-                { name: 'Carlo', role: 'Back End', avatar: '/avatar-2.png', about: 'Studied BSIT at Cavite State University'},
-                { name: 'Jayf', role: 'Back End', avatar: '/avatar-4.png', about: 'Studied BSIT at Cavite State University'},
-                { name: 'Cath', role: 'Front End', avatar: '/avatar-3.png',about: 'Studied BSIT at Cavite State University'},
-                { name: 'Mark', role: 'Back End', avatar: '/avatar-5.png',about: 'Studied BSIT at Cavite State University'},
-                { name: 'One', role: 'Back End', avatar: '/avatar-3.png',about: 'Studied BSIT at Cavite State University'},
-                { name: 'Two', role: 'Back End', avatar: '/avatar-4.png',about: 'Studied BSIT at Cavite State University'},  
-                { name: 'three', role: 'Back End', avatar: '/avatar-5.png',about: 'Studied BSIT at Cavite State University'}
+                { name: 'Ren', role: 'Front End', avatar: '/avatar-1.png', about: 'Studied BSIT at Cavite State University' },
+                { name: 'Carlo', role: 'Back End', avatar: '/avatar-2.png', about: 'Studied BSIT at Cavite State University' },
+                { name: 'Jayf', role: 'Back End', avatar: '/avatar-4.png', about: 'Studied BSIT at Cavite State University' },
+                { name: 'Cath', role: 'Front End', avatar: '/avatar-3.png', about: 'Studied BSIT at Cavite State University' },
+                { name: 'Mark', role: 'Back End', avatar: '/avatar-5.png', about: 'Studied BSIT at Cavite State University' },
+               
 
             ]
         }

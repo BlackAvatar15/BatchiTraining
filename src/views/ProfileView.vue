@@ -2,11 +2,10 @@
     <v-container>
         <v-row no-gutters v-if="profileDetails">
             <v-col cols="4">
-                <h1>Hi my name is {{profileDetails.name}}</h1>
                 <img :src="profileDetails.image">
             </v-col>
             <v-col cols="8">
-
+                <h1>Hi my name is {{profileDetails.name}}</h1>
             </v-col>
         </v-row>
     </v-container>

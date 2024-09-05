@@ -27,10 +27,10 @@
 
             <v-navigation-drawer v-model="drawer" :location="$vuetify.display.mobile ? 'bottom' : undefined" temporary>
                 <v-list>
-                    <v-list-item @click="goToMark('mark')" style="cursor: pointer;">
+                    <v-list-item @click="goToWork('mark')" style="cursor: pointer;">
                         MARK
                     </v-list-item>
-                    <v-list-item @click="goToCaloy('caloy')" style="cursor: pointer;">
+                    <v-list-item @click="goToAddress('caloy')" style="cursor: pointer;">
                         CALOY
                     </v-list-item>
                     <v-list-item @click="goToRen('ren')" style="cursor: pointer;">
@@ -41,6 +41,9 @@
                     </v-list-item>
                     <v-list-item @click="goToCard('card')" style="cursor: pointer;">
                         CARD VIEW
+                    </v-list-item>
+                    <v-list-item @click="gotonewProfile('profilenew')" style="cursor: pointer;">
+                        NEW PROFILE
                     </v-list-item>
 
                 </v-list>
@@ -128,7 +131,12 @@
                                 </tbody>
 
                             </v-table> -->
-                            <v-data-table :headers="headers" :items="phones" :search="search"></v-data-table>
+                            <v-data-table :headers="headers" :items="phones" :search="search">
+                       
+                                <template v-slot:item.action="{item}">
+                                    <v-btn @click="goToProductDetails(item)">{{ item.action }}</v-btn>
+                                </template>
+                            </v-data-table>
 
                         </v-row>
 
@@ -171,6 +179,8 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from "vuex";
+
 export default {
     name: 'TablesView',
     data() {
@@ -207,6 +217,7 @@ export default {
                 { key: "processor", title: "Processor" },
                 { key: "camera", title: "Camera" },
                 { key: "price", title: "Price" },
+                {key: "action", title: "View Details"}
 
             ],
             phones: [
@@ -218,6 +229,7 @@ export default {
                     processor: 'Snapdragon 888',
                     camera: '50mp',
                     price: 10000,
+                    action: "View"
 
                 },
                 {
@@ -228,6 +240,8 @@ export default {
                     processor: 'Snapdragon 888',
                     camera: '50mp',
                     price: 20000,
+                    action: "View"
+
                 },
                 {
                     brandName: 'Oppo',
@@ -237,6 +251,8 @@ export default {
                     processor: 'Snapdragon 888',
                     camera: '50mp',
                     price: 23000,
+                    action: "View"
+
                 },
                 {
                     brandName: 'Samsung',
@@ -246,6 +262,8 @@ export default {
                     processor: 'Snapdragon 888',
                     camera: '50mp',
                     price: 50000,
+                    action: "View"
+
                 },
                 {
                     brandName: 'Apple',
@@ -255,6 +273,8 @@ export default {
                     processor: 'Snapdragon 888',
                     camera: '50mp',
                     price: 70000,
+                    action: "View"
+
                 },
                 {
                     brandName: 'Infinix',
@@ -264,6 +284,8 @@ export default {
                     processor: 'Snapdragon 888',
                     camera: '50mp',
                     price: 15000,
+                    action: "View"
+
                 },
                 {
                     brandName: 'Infinix',
@@ -273,6 +295,8 @@ export default {
                     processor: 'Snapdragon 888',
                     camera: '50mp',
                     price: 15000,
+                    action: "View"
+
                 },
                 {
                     brandName: 'Infinix',
@@ -282,6 +306,8 @@ export default {
                     processor: 'Snapdragon 888',
                     camera: '50mp',
                     price: 15000,
+                    action: "View"
+
                 },
                 {
                     brandName: 'Infinix',
@@ -291,6 +317,8 @@ export default {
                     processor: 'Snapdragon 888',
                     camera: '50mp',
                     price: 15000,
+                    action: "View"
+
                 },
                 {
                     brandName: 'Infinix',
@@ -300,6 +328,8 @@ export default {
                     processor: 'Snapdragon 888',
                     camera: '50mp',
                     price: 15000,
+                    action: "View"
+
                 },
                 {
                     brandName: 'Infinix',
@@ -309,6 +339,8 @@ export default {
                     processor: 'Snapdragon 888',
                     camera: '50mp',
                     price: 15000,
+                    action: "View"
+
                 },
             ],
 
@@ -320,8 +352,19 @@ export default {
         },
     },
     methods: {
+        ...mapActions(["saveProductDetails"]),
+        goToProductDetails(data) {
+            // console.log(data)
+            // return;
+            this.saveProductDetails(data)
+
+            this.$router.push("/product-details")
+        },
+        goToAltabs() {
+            this.$router.push('/altabs/')
+        },
         goToMark(mark) {
-            this.$router.push('/mark/' + mark)
+            this.$router.push('/mark/')
         },
         goToWork(work) {
             this.$router.push('/profileWork/' + work)
@@ -334,6 +377,9 @@ export default {
         },
         goToCard(card) {
             this.$router.push('/profileCard/' + card)
+        },
+        gotonewProfile(profileNew) {
+            this.$router.push('/profilenewView/')
         },
         /*
         goToProfile(crud) {

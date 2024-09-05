@@ -14,6 +14,8 @@ import WorkView from '@/views/WorkView.vue'
 import AgeView from '@/views/AgeView.vue'
 import AddressView from '@/views/AddressView.vue'
 import CardView from '@/views/CardView.vue'
+import ProfilenewView from '@/views/ProfilenewView.vue'
+import ProductDetailsView from '@/views/ProductDetailsView.vue'
 
 
 const routes = [
@@ -92,6 +94,17 @@ const routes = [
     name : "card",
     component: CardView
   },
+  {
+    path:'/profilenewView/',
+    name: "profilenew",
+    component: ProfilenewView
+  },
+  {
+    path:'/product-details',
+    name: "productdetails",
+    component: ProductDetailsView
+  },
+
   /*
   {
     path: '/profileCrud/:crud',

@@ -1,17 +1,54 @@
 <template>
-    <v-container>
-        <v-row no-gutters v-if="address">
-            <v-col cols="4">
-                <h1>Hi my name is {{address.name}}</h1>
-               <h1> My work is {{ address.work }}</h1>
-               <h1> I'm {{ address.age }}</h1>
-               <h1>From {{ address.address }}</h1>
-            </v-col>
-            <v-col cols="8">
+    <!--<v-container class="my-5">
+        <v-card color="grey" flat class="text-xs-center ma-3">
+            <v-row no-gutters v-if="address">
+                <v-col cols="4">
+                    <v-responsive class="pt-4">
+                        <v-img :src="address.image"></v-img>
+                    </v-responsive>
+                </v-col>
+            </v-row>
+            <v-row>
+                <v-col cols="8">
+                    <h1>Hi my name is {{ address.name }}</h1>
+                    <h1> My work is {{ address.work }}</h1>
+                    <h1> I'm {{ address.age }}</h1>
+                    <h1>From {{ address.address }}</h1>
+                </v-col>
+            </v-row>
+        </v-card>
+    </v-container>-->
 
-            </v-col>
-        </v-row>
+    <v-container class="my-1">
+        <v-layout row wrap justify-center>
+            <v-flex xs12 sm6 md4 lg3>
+                <v-card color="grey" class="pa-4" flat>
+
+                    <v-row no-gutters v-if="address">
+                        <v-col cols="12">
+                            <v-responsive class="pt-4">
+                                <v-img :src="address.image"></v-img>
+                            </v-responsive>
+                        </v-col>
+                    </v-row>
+
+                    <v-row>
+                        <v-col cols="20">
+                            <div class="text-center">
+                                <h1>{{ address.name }}</h1>
+                                <h1> My work is {{ address.work }}</h1>
+                                <h1> I'm {{ address.age }}</h1>
+                                <h1>From {{ address.address }}</h1>
+                            </div>
+                        </v-col>
+                    </v-row>
+                </v-card>
+
+            </v-flex>
+        </v-layout>
+        
     </v-container>
+
 </template>
 
 <script>
@@ -76,4 +113,10 @@ export default {
 
 </script>
 
-<style></style>
+<style>
+.v-card-subtitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+</style>

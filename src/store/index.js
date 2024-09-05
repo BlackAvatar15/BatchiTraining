@@ -1,7 +1,8 @@
 import { createStore } from 'vuex'
-
-export default createStore({
+import productmanagement from "./modules/productmanagement"
+const  store =  createStore({
   state: {
+    productdetails: null
   },
   getters: {
   },
@@ -10,5 +11,8 @@ export default createStore({
   actions: {
   },
   modules: {
+    productmanagement
   }
 })
+
+export default store;

@@ -1,5 +1,5 @@
 <template>
-    <h1>THIS IS CALOY</h1>
+    <h1>...</h1>
 </template>
 
 <script>
