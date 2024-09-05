@@ -13,6 +13,8 @@ import ImageView from '@/views/ImageView.vue'
 import WorkView from '@/views/WorkView.vue'
 import AgeView from '@/views/AgeView.vue'
 import AddressView from '@/views/AddressView.vue'
+import CardView from '@/views/CardView.vue'
+
 
 const routes = [
   {
@@ -85,6 +87,17 @@ const routes = [
     name : "address",
     component: AddressView
   },
+  {
+    path: '/profileCard/:card',
+    name : "card",
+    component: CardView
+  },
+  /*
+  {
+    path: '/profileCrud/:crud',
+    name : "crud",
+    component: CrudView
+  },*/
 
 
 ]

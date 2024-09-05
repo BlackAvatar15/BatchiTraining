@@ -2,7 +2,9 @@
     <v-card>
         <v-layout>
             <v-app-bar color="primary" prominent>
-                <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+                <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer">
+
+                </v-app-bar-nav-icon>
 
                 <v-toolbar-title>Product Table</v-toolbar-title>
 
@@ -16,7 +18,7 @@
 
                 <v-btn icon="mdi-dots-vertical" variant="text"></v-btn>
             </v-app-bar>
-<!--
+            <!--
             <v-img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkBAq4WslL80_1hdR9bq9aF26Atpnvz0S6Q0czpk4_OrWDSxck7a7uFRP6Qn95rIsf6Eo&usqp=CAU"
           alt="Sidebar Image"
@@ -25,18 +27,22 @@
 
             <v-navigation-drawer v-model="drawer" :location="$vuetify.display.mobile ? 'bottom' : undefined" temporary>
                 <v-list>
-                    <v-list-item @click="goToProfile('mark')" style="cursor: pointer;">
+                    <v-list-item @click="goToMark('mark')" style="cursor: pointer;">
                         MARK
                     </v-list-item>
-                    <v-list-item @click="goToProfile('caloy')" style="cursor: pointer;">
+                    <v-list-item @click="goToCaloy('caloy')" style="cursor: pointer;">
                         CALOY
                     </v-list-item>
-                    <v-list-item @click="goToProfile('ren')" style="cursor: pointer;">
+                    <v-list-item @click="goToRen('ren')" style="cursor: pointer;">
                         REN
                     </v-list-item>
-                    <v-list-item @click="goToProfile('altabs')" style="cursor: pointer;">
+                    <v-list-item @click="goToAltabs('altabs')" style="cursor: pointer;">
                         ALTABS
                     </v-list-item>
+                    <v-list-item @click="goToCard('card')" style="cursor: pointer;">
+                        CARD VIEW
+                    </v-list-item>
+
                 </v-list>
             </v-navigation-drawer>
             <!--this is the side bar-->
@@ -194,15 +200,13 @@ export default {
             ],
 */
             header: [
-                {key: "brandName", title: "Brand Name"},
-                {key: "model", title: "Model"},
-                {key: "ram", title: "RAM"},
-                {key: "rom", title: "ROM"},
-                {key: "processor", title: "Processor"}, 
-                {key: "camera", title: "Camera"},
-                {key: "price", title: "Price"},
-
-
+                { key: "brandName", title: "Brand Name" },
+                { key: "model", title: "Model" },
+                { key: "ram", title: "RAM" },
+                { key: "rom", title: "ROM" },
+                { key: "processor", title: "Processor" },
+                { key: "camera", title: "Camera" },
+                { key: "price", title: "Price" },
 
             ],
             phones: [
@@ -316,21 +320,30 @@ export default {
         },
     },
     methods: {
-        goToProfile(name) {
-            this.$router.push('/profileWork/' + name)
+        goToMark(mark) {
+            this.$router.push('/mark/' + mark)
         },
-        goToProfile(work) {
+        goToWork(work) {
             this.$router.push('/profileWork/' + work)
         },
-        goToProfile(age) {
+        goToAge(age) {
             this.$router.push('/profileAge/' + age)
         },
-        goToProfile(address) {
+        goToAddress(address) {
             this.$router.push('/profileAddress/' + address)
         },
+        goToCard(card) {
+            this.$router.push('/profileCard/' + card)
+        },
+        /*
+        goToProfile(crud) {
+            this.$router.push('/profileCrud/' + crud)
+        },*/
         goToAnyRoute(route) {
             this.$router.push(route)
         },
+
+
 
     }
 }
