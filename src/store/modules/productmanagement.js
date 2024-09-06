@@ -1,23 +1,30 @@
 const state = {
-    productdetails: null
+    productdetails: null,
+    productimg: null
 }
 
-const getters = {
-    // assigned variables or function to get data
+const getters = { 
     getProductDetailsData: (state) => {
         return state.productdetails;
+    },
+    getProductImage: (state) => {
+        return state.productimg;
     }
 }
 
-const mutations = {
-    // set data to update getProductDetailsData
+const mutations = { 
     setProductDetailsData(state, data) {
         state.productdetails = data;
+    },
+    setProductImage(state, data) {
+        state.productimg = data;
     }
 }
 
 const actions = {
-    // function same with methods that you can use in all components
+    saveProductImage({commit}, data){ 
+        commit("setProductImage", data);
+    },
     async saveProductDetails({ commit }, data) {
         console.log(data);
        await  commit("setProductDetailsData", data);

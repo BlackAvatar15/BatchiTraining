@@ -73,7 +73,7 @@ export default {
                 },
                 {
                     id: "caloy",
-                    name: "Caloy Monroy",
+                    name: "Carlo Cornelio",
                     image: "https://ca.slack-edge.com/T01J3BNRZGB-U0490L84GVB-ea59068d89f0-512",
                     work: "Programmer 2",
                     age: 25,

@@ -60,25 +60,21 @@
 
                         <v-responsive class="pt-4">
                             
-                           <v-row>
-                            <v-col cols="4">
+                           
                                 <v-avatar size="100" class="grey lighten-2">
                                     <img :src="person.avatar">
                                 </v-avatar>
-                            </v-col>
-                        </v-row>
+                           
                     
-                            
+                              
                         </v-responsive>
-                        <v-row>
-                        <v-col cols="8">
+                      
                             <v-card-text>
                                 <div class="subheading">{{ person.name }}</div>
                                 <div class="grey--text">{{ person.role }}</div>
                                 <div>{{ person.about }}</div>
                             </v-card-text>
-                        </v-col>
-                    </v-row>
+                        
                         <v-card-actions>
                             <v-btn flat color="white">
                                 <v-icon small left>message</v-icon>
@@ -104,6 +100,7 @@ export default {
                 { name: 'Jayf', role: 'Back End', avatar: '/avatar-4.png', about: 'Studied BSIT at Cavite State University' },
                 { name: 'Cath', role: 'Front End', avatar: '/avatar-3.png', about: 'Studied BSIT at Cavite State University' },
                 { name: 'Mark', role: 'Back End', avatar: '/avatar-5.png', about: 'Studied BSIT at Cavite State University' },
+                { name: 'Mark', role: 'Back End', avatar: '/avatar-1.png', about: 'Studied BSIT at Cavite State University' },
                
 
             ]

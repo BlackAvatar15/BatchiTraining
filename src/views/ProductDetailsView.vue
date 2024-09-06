@@ -4,6 +4,9 @@
             <v-row no-gutters>
                 <v-col cols="6">
                     <v-row no-gutters class="text-start">
+                        <v-col cols="12">
+                            <v-img style="width: 200px; height: 350px;" :src="getProductImage.image"></v-img>
+                        </v-col>
                         <v-col cols="12"> 
                             <h3> Product Name: {{ getProductDetailsData.brandName }}</h3>
 
@@ -65,7 +68,7 @@ export default {
 
     },
     computed: {
-        ...mapGetters(['getProductDetailsData'])
+        ...mapGetters(['getProductDetailsData', "getProductImage"])
     },
     methods: {
         gotoRen() {
