@@ -85,7 +85,7 @@ export default {
         },
         registerUser() {
             this.submitting = true;
-
+            //logical operators
             // == equal
             // != equal
             // => equal or greater than

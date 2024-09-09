@@ -37,6 +37,12 @@
                     <v-list-item @click="gotonewProfile('profilenew')" style="cursor: pointer;">
                         NEW PROFILE
                     </v-list-item>
+                    <v-list-item @click="gotoNavbar('navbar')" style="cursor: pointer;">
+                        Nav
+                    </v-list-item>
+                    <v-list-item @click="gotoProduct('product')" style="cursor: pointer;">
+                        Product
+                    </v-list-item>
 
                 </v-list>
             </v-navigation-drawer>
@@ -332,7 +338,7 @@ export default {
         goToAltabs() {
             this.$router.push('/altabs/')
         },
-        goToMark(mark) {
+        goToMark() {
             this.$router.push('/mark/')
         },
         goToWork(work) {
@@ -349,6 +355,12 @@ export default {
         },
         gotonewProfile(profileNew) {
             this.$router.push('/profilenewView/')
+        },
+        gotoNavbar(navbar){
+            this.$router.push('/navbar/')
+        },
+        gotoProduct(product){
+            this.$router.push('/product/')
         },
         /*
         goToProfile(crud) {

@@ -68,8 +68,26 @@ export default {
       this.$router.push('/');
     },
 
-    loginUser() {
+    async loginUser() {
       this.submitting = true;
+
+
+
+      /*this.$cookies.set('email', this.email, '2d')
+      this.$cookies.set('password', this.password, '2d')
+      const loginCookie = this.$cookies.get('email', 'password')
+      this.$router.push('/home')
+
+      localStorage.setItem('email', this.email)
+      localStorage.setItem('password', this.password)
+      console.log(loginCookie)
+
+      const storeEmail = localStorage.getItem('email')
+      console.log(storeEmail)
+      const storePassword = localStorage.getItem('password')
+      console.log(storePassword)*/
+
+
       // axios.post(
 
       // ).then((response) => {
@@ -78,10 +96,11 @@ export default {
 
       // })
 
-      axios.post("http://localhost:8765/trainee-backend/api/user/sign-in",
+      await axios.post("http://localhost:8765/trainee-backend/api/user/sign-in",
         {
           "email": this.email,
-          "password": this.password
+          "password": this.password,
+
         },
         {
           methods: "post",
@@ -89,9 +108,22 @@ export default {
             "Content-Type": "application/json"
           }
         }
-      ).then((response) => {
+      ).then(async (response) => {
+
+        //this is how you set Token
+        const loginToken = await response.data.token 
+        this.$cookies.set('auth_token', loginToken, '2d')
+
+
+        //this.$cookies.set('token', this., '1d')
+        //this.$cookies.set('token', this.response, '1d')
+
+        //const loginCookie = this.$cookies.get('token')
+
         this.submitting = false;
-        this.$router.push('/tables')
+        await this.$router.push('/tables')
+        console.log(response.data)
+
       }).catch((error) => {
         alert("ERROR")
         this.submitting = false;
