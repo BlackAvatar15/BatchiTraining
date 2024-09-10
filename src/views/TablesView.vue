@@ -43,6 +43,9 @@
                     <v-list-item @click="gotoProduct('product')" style="cursor: pointer;">
                         Product
                     </v-list-item>
+                    <v-list-item @click="gotoHome('homepage')" style="cursor: pointer;">
+                        HOME VIEW
+                    </v-list-item>
 
                 </v-list>
             </v-navigation-drawer>
@@ -361,6 +364,9 @@ export default {
         },
         gotoProduct(product){
             this.$router.push('/product/')
+        },
+        gotoHome(){
+            this.$router.push('/homepage')
         },
         /*
         goToProfile(crud) {

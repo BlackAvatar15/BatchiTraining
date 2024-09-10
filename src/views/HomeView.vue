@@ -11,27 +11,30 @@
       <v-row no-gutters style="height: 50vh !important;">
         <!-- #REN -->
         <!-- LEFT SIDE BACKGROUND IMAGE -->
-        <v-col class="left-section" cols="col" md="8" style="
-        ">
-
+        <v-col class="left-section" cols="col" md="8" style="">
         </v-col>
+        
         <!-- RIGHT SIDE -->
         <v-col cols="col" md="4" class="text-start pa-10">
+
           <v-row no-gutters>
             <v-col cols="12">
               <h1>5 DAYS ONLY</h1>
             </v-col>
           </v-row>
+
           <v-row no-gutters>
             <v-col cols="12">
               <h1>20% OFF with CODE:</h1>
             </v-col>
           </v-row>
+
           <v-row no-gutters>
             <v-col cols="12">
               <h1 @click="sayHelloUser">CALOY2024</h1>
             </v-col>
           </v-row>
+
           <v-row no-gutters>
             <v-col cols="12">
               <h3>Promo code runs until December 01, 2024 only.</h3>

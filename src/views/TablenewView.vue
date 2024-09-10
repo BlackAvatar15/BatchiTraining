@@ -61,8 +61,7 @@
             </v-col>
             <v-col cols="5">
                 <v-text-field v-model="category" label="Category" placeholder="Enter Category"></v-text-field>
-
-
+                
             </v-col>
             <v-col cols="2">
                 <v-btn @click="addProduct">
