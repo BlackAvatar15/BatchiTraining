@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <v-row justify="center" no-gutters style="background-color:white; color:white">
+        <v-row justify="center" no-gutters style="background-color:none; color:white">
             <v-col cols="12">
                 <v-btn v-for="link in links" :key="link" class="mx-2" color="black" rounded="xl" variant="text">
                     {{ link }}
@@ -11,14 +11,22 @@
 
         <v-row class="one-section">
             <v-col cols="12">
-                <center>
-                    <v-row>
-                        <h4>AMBITION IS THE FIRST KEY TO</h4>
-                        <h1>S U C C E S S</h1>
-                    </v-row>
-                </center>
-                <v-btn style="background-color: black; color: white;">Book Now</v-btn>
+                <v-row justify="center" align="center">
+                    <v-col cols="12" sm="4">
+                        <h4 style="color: white; font-size: 20px; text-transform: uppercase">major source of fat and
+                            protein in the diet</h4>
+                        <h1 style="font-size: 100px; color: white; font-family: Arial, Helvetica, sans-serif;">PILI NUTS
+                        </h1>
+                        <h5 style="color: azure; font-family: Arial, Helvetica, sans-serif; font-size: 20px">Now
+                            available in Catanduanes</h5>
+                    </v-col>
+                </v-row>
+                <!--<h4 align="center">AMBITION IS THE FIRST KEY TO</h4>-->
+                <!--<h1>S U C C E S S</h1>-->
 
+                <v-col cols="auto">
+                    <v-btn size="x-large" style="color:brown; background-color: white">Buy Now</v-btn>
+                </v-col>
 
             </v-col>
         </v-row>
@@ -29,42 +37,72 @@
 
                 <v-row no-gutters>
                     <v-col cols="12">
-                        <h3>ABOUT ME</h3>
+                        <h3 style="font-size: 50px; color: brown"><strong>ABOUT <br> PILI</strong></h3>
                     </v-col>
                 </v-row>
 
                 <v-row no-gutters>
-                    <v-col cols="12">
-                        <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel optio, ipsam hic beatae
-                            consectetur
-                            harum ex repellat animi exercitationem obcaecati, illo temporibus mollitia expedita,
-                            fugiat
-                            iure. Quisquam autem mollitia consequatur.</h5>
+                    <v-col cols="12" style="font-size: 30px; text-align: justify;">
+                        <h6>Pili, also known as fimbriae, are proteinaceous, filamentous polymeric organelles expressed
+                            on the surface of bacteria. They range from a few fractions of a micrometer to > 20 μm in
+                            length and vary from 2 to 11 nm in diameter. Their functions include mediation of
+                            cell-to-cell interactions, motility, and DNA uptake.
+                            <br>Pili nuts usually grow in the Region of Bicol. That's why it is one of the most common
+                            livelihoods in the area and can be seen in the market. Tourism contributed to the growth of
+                            the Pili Nut business in this area because this is what the tourists buy as a pasalubong.
+                        </h6>
                     </v-col>
                 </v-row>
 
-                <v-row>
-                    <v-btn>MORE</v-btn>
-                </v-row>
+                <v-col cols="12" md="4" sm="6">
+                    <v-btn size="x-large" block
+                        style="background-color: brown; font-weight: bold; color:white;">MORE</v-btn>
+                </v-col>
+
+
+
             </v-col>
         </v-row>
-        <v-row style="margin-top: 35vh !important;">
-            <v-col cols="12" md="4">
-                <v-card>
-                    <v-card-item>
-                        <v-card-title>ONLINE COACHING</v-card-title>
-                        <v-card-subtitle> Working on new habits and hobbies to achieve your goals.
-                        </v-card-subtitle>
-                        <v-row no-gutters class="mt-2">
-                            <v-text-field v-model="email" label="Full Name" placeholder="Full Name"
-                                type="text"></v-text-field>
-                        </v-row>
-                        <v-row no-gutters class="mt-3">
-                            <v-text-field v-model="email" label="Address" placeholder="Address"
-                                type="text"></v-text-field>
-                        </v-row>
 
-                        <v-btn>Booking</v-btn>
+
+        <v-row style="margin-top: 35vh!important; background-color: #7EACB5">
+
+            <v-col cols="12" md="4">
+
+                <v-card elevation="10" height="100%" style="position: relative; ">
+
+                    <v-card-item>
+                        <v-card-title style="font-size: 40px; text-align: center; color: brown;">
+                            <strong>WHAT IS PILI</strong>
+                        </v-card-title>
+                        <h4 style="text-align: justify;"> Pili nut kernels are loaded with nutrients such as magnesium,
+                            potassium and calcium. More importantly, they are rich in omega fatty acids, phosphorus, and
+                            have high levels of protein, promoting heart health and balancing cholesterol (especially
+                            important in a country like the Philippines that has love affair with fatty pork). <br><br>
+                            These kernels can be processed into nut kernel oil, which is said to be healthier than olive
+                            oil.</h4>
+
+                        <v-btn style="background-color: brown; color:white;">Read More</v-btn>
+
+                    </v-card-item>
+                </v-card>
+            </v-col>
+
+            <v-col cols="12" md="4">
+                <v-card elevation="10" height="100%" style="position: relative; ">
+                    <v-card-item>
+                        <v-card-title style="font-size: 40px; text-align: center; color: brown;">
+                            <strong>HISTORY</strong>
+                        </v-card-title>
+                        <h4 style="text-align: justify;">For a long time, the pili nut was the Philippines best kept
+                            secret, even though they’re ubiquitous throughout the country, enjoyed by locals and coveted
+                            by tourists who stuff them into their carry-on luggage at airports before heading home. <br>
+                            To
+                            this day, pili nuts in the Philippines are most often served salted and fried in refined
+                            coconut oil, or carmelized in heaps of sugar. Delicious to be sure, but their nutrition
+                            compromised for mainstream commercial sale in the country.</h4>
+
+                        <v-btn style="background-color: brown; color:white;">Read More</v-btn>
 
                     </v-card-item>
                 </v-card>
@@ -72,61 +110,130 @@
 
             <v-col cols="12" md="4">
                 <v-card>
-                    <v-card-item>
-                        <v-card-title>COUPLE GUIDANCE</v-card-title>
-                        <v-card-subtitle> Working on new habits and hobbies to achieve your goals.
-                        </v-card-subtitle>
-                        <v-row no-gutters class="mt-3">
-                            <v-text-field v-model="email" label="Full Name" placeholder="Full Name"
-                                type="text"></v-text-field>
-                        </v-row>
-                        <v-row no-gutters class="mt-3">
-                            <v-text-field v-model="email" label="Address" placeholder="Address"
-                                type="text"></v-text-field>
-                        </v-row>
+                    <v-card elevation="10" height="100%" style="position: relative; ">
+                        <v-card-item>
+                            <v-card-title style="font-size: 40px; text-align: center; color: brown;">
+                                <strong>HOW TO ORDER</strong>
+                            </v-card-title>
+                            <h4 style="text-align: justify;"> You can order our Pili Nut pasalubong online and in our
+                                physical store. You can also visit some establishment here in Catanduanes that sells
+                                Pili Nut and choose their available pasalubongs, you may try buying from the terminal as
+                                there is vendor
+                                who sells it or yoy may contact them to go to your home and deliver it to safely. Or you
+                                can order from the provided number below at contact section.
+                                <br><br>
+                                So what are you waiting for, GO AND GRAB YOURS NOW!
+                            </h4>
 
-                        <v-btn>Booking</v-btn>
+                            <v-btn style="background-color: brown; color:white;">Read More</v-btn>
 
-                    </v-card-item>
-                </v-card>
-            </v-col>
+                        </v-card-item>
+                    </v-card>
 
-            <v-col cols="12" md="4">
-                <v-card>
-                    <v-card-item>
-                        <v-card-title>SELF IMPROVEMENT WORKSHOP</v-card-title>
-                        <v-card-subtitle> Working on new habits and hobbies to achieve your goals.
-                        </v-card-subtitle>
-                        <v-row no-gutters class="mt-3">
-                            <v-text-field v-model="email" label="Full Name" placeholder="Full Name"
-                                type="text"></v-text-field>
-                        </v-row>
-                        <v-row no-gutters class="mt-3">
-                            <v-text-field v-model="email" label="Address" placeholder="Address"
-                                type="text"></v-text-field>
-                        </v-row>
 
-                        <v-btn>Booking</v-btn>
-
-                    </v-card-item>
                 </v-card>
             </v-col>
         </v-row>
         <v-row>
+
+            <!--OUR PRODUCTS-->
+
+            <v-col cols="12" style="margin-top: 40; height: 50vh !important;">
+                <v-row no-gutters style="height:50vh !important">
+                    <v-col>
+                        <h1>OUR PRODUCTS</h1>
+
+                        <v-row>
+                            <v-col>
+                                <v-card class="mx-auto" max-width="344">
+                                    <v-img height="200px"
+                                        src="https://bulusanruralvagabond.wordpress.com/wp-content/uploads/2013/10/dsc00598-copy-copy.jpg"
+                                        cover></v-img>
+                                </v-card>
+                            </v-col>
+                            <v-col>
+                                <v-card class="mx-auto" max-width="344">
+                                    <v-img height="200px"
+                                        src="https://naturalzing.com/cdn/shop/products/coconut-pili-nuts-8-oz-794095.jpg?v=1692724064"
+                                        cover></v-img>
+                                </v-card>
+                            </v-col>
+                            <v-col>
+                                <v-card class="mx-auto" max-width="344">
+                                    <v-img height="200px"
+                                        src="https://jammys.sg/cdn/shop/files/IMG_3595.jpg?v=1714505406&width=1400"
+                                        cover></v-img>
+                                </v-card>
+                            </v-col>
+                            <v-col>
+                                <v-card class="mx-auto" max-width="344">
+                                    <v-img height="200px"
+                                        src="https://ph-test-11.slatic.net/p/3b171e0cb415760fe02161ec929f03fe.jpg"
+                                        cover></v-img>
+                                </v-card>
+                            </v-col>
+                        </v-row>
+
+
+                        <v-row>
+                            <v-col>
+                                <v-card class="mx-auto" max-width="344">
+                                    <v-img height="200px" src="https://i.ytimg.com/vi/6wNmqM3cWsM/hqdefault.jpg"
+                                        cover></v-img>
+                                </v-card>
+                            </v-col>
+
+                            <v-col>
+                                <v-card class="mx-auto" max-width="344">
+                                    <v-img height="200px"
+                                        src="https://www.wikihow.com/images/2/2b/Make-Crispy-Pili-Final-Version-2.jpg"
+                                        cover></v-img>
+                                </v-card>
+                            </v-col>
+                            <v-col>
+                                <v-card class="mx-auto" max-width="344">
+                                    <v-img height="200px"
+                                        src="https://t4.ftcdn.net/jpg/03/67/34/57/360_F_367345706_mAoEDSNcFqqMI1E1qaDrrCK7U0eUi46L.jpg"
+                                        cover></v-img>
+                                </v-card>
+                            </v-col>
+                            <v-col>
+                                <v-card class="mx-auto" max-width="344">
+                                    <v-img height="200px"
+                                        src="https://images.yummy.ph/yummy/uploads/2017/02/nilupak-with-pili-2.jpg"
+                                        cover></v-img>
+                                </v-card>
+                            </v-col>
+                        </v-row>
+
+
+                    </v-col>
+
+                </v-row>
+            </v-col>
+
+            <!--THIS IS YOUR CONTACT FORM-->
+
             <v-col cols="12" style="height: 50vh !important;">
                 <v-row no-gutters style="height: 50vh !important;">
                     <v-col class="left-contact" cols="cols" md="6" style="">
                         <!--INPUT HERE THE CONTACT LABELS OR TAGLINE-->
-                        <h1>CONTACT FORM</h1>
-                        <h1></h1>
-                        <h3 style="justify-content: center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-                            optio, ipsam hic beatae
-                            consectetur harum<br> ex repellat animi exercitationem obcaecati, illo temporibus mollitia
-                            expedita, fugiat iure. Quisquam autem mollitia consequatur.</h3>
+                        <center>
+                            <h1 style="margin-bottom: 60px">CONTACT FORM</h1>
+
+
+                            <h3 style="justify-content: center; position: relative; margin-top: 60px; width: 500px;">
+                                PILI NUTS <br>Address: Virac, Catanduanes<br>Contact Number: 09300400200<br> Facebook:
+                                Virac Pili Nuts </h3>
+
+                        </center>
+
 
                     </v-col>
 
-                    <v-col class="left-contact" cols="cols" md="6" style="">
+                    <v-col class="right-contact" cols="cols" md="6" style="">
+
+                        <!--
                         <v-row no-gutters class="mt-3">
                             <v-text-field v-model="email" label="Full Name" placeholder="Full Name"
                                 type="text"></v-text-field>
@@ -144,16 +251,51 @@
                         <v-row no-gutters class="mt-3">
                             <v-text-field v-model="email" label="Message" placeholder="messaege" type="text"
                                 row-height="30" rows="4" variant="filled" auto-grow shaped></v-text-field>
-                        </v-row>
+                        </v-row>-->
+
+                        <v-col cols="12" md="12">
+
+                            <v-row>
+
+                                <v-text-field label="Full Name" model-value="Full Name"
+                                    variant="outlined"></v-text-field>
+                            </v-row>
+
+
+                            <v-row>
+                                <v-text-field label="Email Address" model-value="Email Address"
+                                    variant="outlined"></v-text-field>
+                            </v-row>
+
+
+                            <v-row>
+                                <v-text-field label="Address" model-value="Address" variant="outlined"></v-text-field>
+                            </v-row>
+
+                            <v-row>
+                                <v-text-field label="Contact Number" model-value="Contact Number"
+                                    variant="outlined"></v-text-field>
+                            </v-row>
+
+                            <v-row>
+                                <v-text-field label="Message" model-value="Message here"
+                                    variant="outlined"></v-text-field>
+                            </v-row>
+
+
+
+                        </v-col>
 
                         <v-col cols="12" md="4" sm="6">
-                            <v-btn rounded="xl" size="x-large" block color="blue">Submit</v-btn>
+                            <v-btn rectangle="xl" size="x-large" block color="brown">Submit</v-btn>
                         </v-col>
+
                     </v-col>
 
                 </v-row>
 
             </v-col>
+
         </v-row>
 
     </v-container>
@@ -168,10 +310,9 @@ export default {
         links: [
             'Home',
             'About Us',
-            'Team',
-            'Services',
-            'Blog',
-            'Contact Us',
+            'History',
+            'Our Products',
+            'Contact Form',
         ],
     }),
 }
@@ -182,17 +323,31 @@ export default {
 .one-section {
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2024/01/midjourney-desktop-background-of-a-cottage-by-the-sea.jpg');
+    background-image: url('https://t3.ftcdn.net/jpg/05/98/25/30/240_F_598253060_xNA2VyrT062O8qyNURT3SRW0seJjSdsk.jpg');
     height: 75vh;
-
-
+    opacity: 0.9;
 }
 
 .about-me {
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('https://aofoto.pl/wp-content/uploads/2022/06/03-professional-headshot.jpg');
-    height: 75vh;
+    background-image: url('/src/assets/pili.png');
+    height: 80vh;
+    position: relative;
+
+
+}
+
+.left-contact {
+    margin-top: 40px;
+    width: 60px;
+    top: 0px;
+    left: 0px;
+    background-image: url('/src/assets/pili-icon.png');
+    display: block;
+    margin-left: auto;
+    width: 50%;
+    float: left;
 
 }
 </style>
