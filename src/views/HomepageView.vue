@@ -219,7 +219,7 @@
                     <v-col class="left-contact" cols="cols" md="6" style="">
                         <!--INPUT HERE THE CONTACT LABELS OR TAGLINE-->
                         <center>
-                            <h1 style="margin-bottom: 60px">CONTACT FORM</h1>
+                            <h1 style="margin-bottom: 60px; margin-top: 10%">CONTACT FORM</h1>
 
 
                             <h3 style="justify-content: center; position: relative; margin-top: 60px; width: 500px;">
@@ -253,7 +253,7 @@
                                 row-height="30" rows="4" variant="filled" auto-grow shaped></v-text-field>
                         </v-row>-->
 
-                        <v-col cols="12" md="12">
+                        <v-col cols="12" md="12" style="margin-top: 10%;">
 
                             <v-row>
 
@@ -339,15 +339,12 @@ export default {
 }
 
 .left-contact {
-    margin-top: 40px;
-    width: 60px;
-    top: 0px;
-    left: 0px;
+    margin-top: 80px;
+   
     background-image: url('/src/assets/pili-icon.png');
     display: block;
     margin-left: auto;
     width: 50%;
-    float: left;
 
 }
 </style>
