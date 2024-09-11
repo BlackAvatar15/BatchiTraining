@@ -277,10 +277,12 @@
                                     variant="outlined"></v-text-field>
                             </v-row>
 
-                            <v-row>
-                                <v-text-field label="Message" model-value="Message here"
-                                    variant="outlined"></v-text-field>
-                            </v-row>
+                            
+                                <v-row>
+                                <v-textarea label="Message here" model-value="Message here" row-height="50" rows="4" variant="outlined" auto-grow
+                                    shaped></v-textarea>
+                                </v-row>
+                           
 
 
 
@@ -340,7 +342,7 @@ export default {
 
 .left-contact {
     margin-top: 80px;
-   
+
     background-image: url('/src/assets/pili-icon.png');
     display: block;
     margin-left: auto;
