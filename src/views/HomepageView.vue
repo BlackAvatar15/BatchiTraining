@@ -5,29 +5,44 @@
                 <v-btn v-for="link in links" :key="link" class="mx-2" color="black" rounded="xl" variant="text">
                     {{ link }}
                 </v-btn>
+
+                <v-btn style="background-color: brown; color: white;">Order now</v-btn>
             </v-col>
         </v-row>
 
 
         <v-row class="one-section">
-            <v-col cols="12">
-                <v-row justify="center" align="center">
-                    <v-col cols="12" sm="4">
-                        <h4 style="color: white; font-size: 20px; text-transform: uppercase">major source of fat and
-                            protein in the diet</h4>
-                        <h1 style="font-size: 100px; color: white; font-family: Arial, Helvetica, sans-serif;">PILI NUTS
-                        </h1>
-                        <h5 style="color: azure; font-family: Arial, Helvetica, sans-serif; font-size: 20px">Now
-                            available in Catanduanes</h5>
-                    </v-col>
+            <v-col cols="7">
+                <v-row>
+
                 </v-row>
                 <!--<h4 align="center">AMBITION IS THE FIRST KEY TO</h4>-->
                 <!--<h1>S U C C E S S</h1>-->
 
-                <v-col cols="auto">
-                    <v-btn size="x-large" style="color:brown; background-color: white">Buy Now</v-btn>
-                </v-col>
 
+
+            </v-col>
+            <v-col cols="5">
+                <v-row no-gutters style="margin-top: 20vh; width: 100% !important;">
+                    <v-col cols="12" style="width: 100% !important">
+                        <p style="color: white; font-size: 3rem; font-weight: 700; text-transform: uppercase; text-align: left;">Major
+                            source of fat and protein in diet.</p>
+                        <p class="mt-5"
+                            style="color: white; font-size: 4.5rem; font-weight: 800; text-transform: uppercase; text-align: center;">
+                            PILI NUTS</p>
+
+                        <h5 style="color: azure; font-family: Arial, Helvetica, sans-serif; font-size: 20px">Now
+                            available in Catanduanes</h5>
+                    </v-col>
+                </v-row>
+                <v-row no-gutters  class="mt-10">
+                    <v-col cols="12">
+                    <v-btn size="x-large" style="color:brown; background-color: white; ">Buy Now</v-btn>
+                </v-col>
+                </v-row>
+
+
+               
             </v-col>
         </v-row>
         <v-row style="height: 50vh !important;">
@@ -138,15 +153,16 @@
 
             <!--OUR PRODUCTS-->
 
-            <v-col cols="12" style="margin-top: 40; height: 50vh !important;">
+            <v-col cols="12" style="margin-top: 20px; height: 50vh !important;">
                 <v-row no-gutters style="height:50vh !important">
                     <v-col>
-                        <h1>OUR PRODUCTS</h1>
+                        <br>
+                        <h1 style="margin-bottom: 20px;">OUR PRODUCTS</h1>
 
                         <v-row>
                             <v-col>
                                 <v-card class="mx-auto" max-width="344">
-                                    <v-img height="200px"
+                                    <v-img class="hover-img" height="200px"
                                         src="https://bulusanruralvagabond.wordpress.com/wp-content/uploads/2013/10/dsc00598-copy-copy.jpg"
                                         cover></v-img>
                                 </v-card>
@@ -277,13 +293,11 @@
                                     variant="outlined"></v-text-field>
                             </v-row>
 
-                            
-                                <v-row>
-                                <v-textarea label="Message here" model-value="Message here" row-height="50" rows="4" variant="outlined" auto-grow
-                                    shaped></v-textarea>
-                                </v-row>
-                           
 
+                            <v-row>
+                                <v-textarea label="Message here" model-value="Message here" row-height="50" rows="4"
+                                    variant="outlined" auto-grow shaped></v-textarea>
+                            </v-row>
 
 
                         </v-col>
@@ -322,6 +336,14 @@ export default {
 </script>
 
 <style scoped>
+.hover-img{
+    transition: transform .5s !important;
+
+}
+.hover-img:hover { 
+    cursor: pointer !important;
+    transform: scale(1.5);
+}
 .one-section {
     background-size: cover;
     background-repeat: no-repeat;

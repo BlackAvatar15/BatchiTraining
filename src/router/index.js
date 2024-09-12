@@ -14,7 +14,7 @@ import WorkView from '@/views/WorkView.vue'
 import AgeView from '@/views/AgeView.vue'
 import AddressView from '@/views/AddressView.vue'
 import CardView from '@/views/CardView.vue'
-import ProfilenewView from '@/views/ProfilenewView.vue'
+import PiniaView from '@/views/PiniaView.vue'
 import ProductDetailsView from '@/views/ProductDetailsView.vue'
 import NavbarView from '@/views/NavbarView.vue'
 import TablenewView from '@/views/TablenewView.vue'
@@ -98,9 +98,9 @@ const routes = [
     component: CardView
   },
   {
-    path:'/profilenewView/',
-    name: "profilenew",
-    component: ProfilenewView
+    path:'/piniaView/',
+    name: "piniaview",
+    component: PiniaView
   },
   {
     path:'/product-details',

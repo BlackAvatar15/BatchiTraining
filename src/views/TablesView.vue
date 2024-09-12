@@ -34,8 +34,8 @@
                     <v-list-item @click="goToCard('card')" style="cursor: pointer;">
                         CARD VIEW
                     </v-list-item>
-                    <v-list-item @click="gotonewProfile('profilenew')" style="cursor: pointer;">
-                        NEW PROFILE
+                    <v-list-item @click="gotoPinia('piniaview')" style="cursor: pointer;">
+                        Pinia Task
                     </v-list-item>
                     <v-list-item @click="gotoNavbar('navbar')" style="cursor: pointer;">
                         Nav
@@ -356,8 +356,8 @@ export default {
         goToCard(card) {
             this.$router.push('/profileCard/' + card)
         },
-        gotonewProfile(profileNew) {
-            this.$router.push('/profilenewView/')
+        gotoPinia(piniaview) {
+            this.$router.push('/piniaView/')
         },
         gotoNavbar(navbar){
             this.$router.push('/navbar/')
