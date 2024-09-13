@@ -5,29 +5,47 @@
             <h1>PILI TASK</h1>
         </header>
 
-        <div class="task-list">
-            <p>All Tasks</p>
+        <!--THIS IS YOUR ADD TASK FOR TASK FORM-->
+        <div class="new-task-form">
+            <TaskForm />
+        </div>
+        
+        <!--filter nav-->
+        <nav class="filter">
+            <v-btn @click="filter = 'all'">All Tasks</v-btn>
+            <v-btn @click="filter = 'prio'">Priority Tasks</v-btn>
+        </nav>
+
+        <!--loading-->
+        <div class="loading" v-if="taskStore.loading">Loading Task...</div>
+
+
+        <div class="task-list" v-if="filter === 'all'">
+            <p>You have {{ taskStore.totalCount }} task left to do</p>
             <div v-for="pili in taskStore.tasks">
                 <TaskDetails :pili="pili" />
             </div>
         </div>
-        <div class="task-list">
-            <p>Priority Tasks</p>
+        <div class="task-list" v-if="filter === 'prio'">
+            <p>You have {{ taskStore.prioCount }} task left to do</p>
             <div v-for="pili in taskStore.prio">
                 <TaskDetails :pili="pili" />
             </div>
         </div>
-    </main>
 
+    </main>
 </template>
 
 <script>
+import { ref } from 'vue'
 import { useTaskStore } from '@/store/TaskStore'
-import TaskDetails from '@/components/TaskDetails.vue';
+import TaskDetails from '@/components/TaskDetails.vue'
+import TaskForm from '@/components/TaskForm.vue'
+
 
 export default {
     name: 'PiniaView',
-    components: { TaskDetails },
+    components: { TaskDetails, TaskForm },
 
     data() {
     },
@@ -35,7 +53,12 @@ export default {
     setup() {
         const taskStore = useTaskStore()
 
-        return { taskStore }
+        //fetch tasks
+        taskStore.getTasks()
+
+        const filter = ref('all')
+
+        return { taskStore, filter }
 
     }
 
@@ -44,7 +67,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
 
 body {
@@ -109,5 +132,24 @@ header h1 {
     margin-left: 6px;
     cursor: pointer;
     color: #bbb;
+}
+
+/**filter nav */
+.filter {
+    width: none;
+    margin: 10px auto;
+    text-align:center;
+}
+
+/*this is no use code*/
+.filter v-btn {
+    display: inline-block;
+    margin-left: 10px;
+    background: #fff;
+    border: 2px solid #555;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.8em;
 }
 </style>

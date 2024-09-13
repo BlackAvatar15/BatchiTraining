@@ -111,7 +111,7 @@
                         </v-card-title>
                         <h4 style="text-align: justify;">For a long time, the pili nut was the Philippines best kept
                             secret, even though they’re ubiquitous throughout the country, enjoyed by locals and coveted
-                            by tourists who stuff them into their carry-on luggage at airports before heading home. <br>
+                            by tourists who stuff them into their carry-on luggage at airports before heading home. <br><br>
                             To
                             this day, pili nuts in the Philippines are most often served salted and fried in refined
                             coconut oil, or carmelized in heaps of sugar. Delicious to be sure, but their nutrition
@@ -133,9 +133,8 @@
                             <h4 style="text-align: justify;"> You can order our Pili Nut pasalubong online and in our
                                 physical store. You can also visit some establishment here in Catanduanes that sells
                                 Pili Nut and choose their available pasalubongs, you may try buying from the terminal as
-                                there is vendor
-                                who sells it or yoy may contact them to go to your home and deliver it to safely. Or you
-                                can order from the provided number below at contact section.
+                                there is vendor who sells it or yoy may contact them to go to your home and deliver it to safely. Or you
+                                can order from the provided number below at contact section. Let's support the product of Bicol.
                                 <br><br>
                                 So what are you waiting for, GO AND GRAB YOURS NOW!
                             </h4>
@@ -169,21 +168,21 @@
                             </v-col>
                             <v-col>
                                 <v-card class="mx-auto" max-width="344">
-                                    <v-img height="200px"
+                                    <v-img class="hover-img" height="200px"
                                         src="https://naturalzing.com/cdn/shop/products/coconut-pili-nuts-8-oz-794095.jpg?v=1692724064"
                                         cover></v-img>
                                 </v-card>
                             </v-col>
                             <v-col>
                                 <v-card class="mx-auto" max-width="344">
-                                    <v-img height="200px"
+                                    <v-img class="hover-img" height="200px"
                                         src="https://jammys.sg/cdn/shop/files/IMG_3595.jpg?v=1714505406&width=1400"
                                         cover></v-img>
                                 </v-card>
                             </v-col>
                             <v-col>
                                 <v-card class="mx-auto" max-width="344">
-                                    <v-img height="200px"
+                                    <v-img class="hover-img" height="200px"
                                         src="https://ph-test-11.slatic.net/p/3b171e0cb415760fe02161ec929f03fe.jpg"
                                         cover></v-img>
                                 </v-card>
@@ -194,28 +193,28 @@
                         <v-row>
                             <v-col>
                                 <v-card class="mx-auto" max-width="344">
-                                    <v-img height="200px" src="https://i.ytimg.com/vi/6wNmqM3cWsM/hqdefault.jpg"
+                                    <v-img class="hover-img" height="200px" src="https://i.ytimg.com/vi/6wNmqM3cWsM/hqdefault.jpg"
                                         cover></v-img>
                                 </v-card>
                             </v-col>
 
                             <v-col>
                                 <v-card class="mx-auto" max-width="344">
-                                    <v-img height="200px"
+                                    <v-img class="hover-img" height="200px"
                                         src="https://www.wikihow.com/images/2/2b/Make-Crispy-Pili-Final-Version-2.jpg"
                                         cover></v-img>
                                 </v-card>
                             </v-col>
                             <v-col>
                                 <v-card class="mx-auto" max-width="344">
-                                    <v-img height="200px"
+                                    <v-img class="hover-img" height="200px"
                                         src="https://t4.ftcdn.net/jpg/03/67/34/57/360_F_367345706_mAoEDSNcFqqMI1E1qaDrrCK7U0eUi46L.jpg"
                                         cover></v-img>
                                 </v-card>
                             </v-col>
                             <v-col>
                                 <v-card class="mx-auto" max-width="344">
-                                    <v-img height="200px"
+                                    <v-img class="hover-img" height="200px"
                                         src="https://images.yummy.ph/yummy/uploads/2017/02/nilupak-with-pili-2.jpg"
                                         cover></v-img>
                                 </v-card>
