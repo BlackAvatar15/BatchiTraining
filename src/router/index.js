@@ -19,6 +19,7 @@ import ProductDetailsView from '@/views/ProductDetailsView.vue'
 import NavbarView from '@/views/NavbarView.vue'
 import TablenewView from '@/views/TablenewView.vue'
 import HomepageView from '@/views/HomepageView.vue'
+import ProductView from '@/views/ProductView.vue'
 
 
 const routes = [
@@ -121,6 +122,11 @@ const routes = [
     path: '/homepage/',
     name: 'homepage',
     component: HomepageView
+  },
+  {
+    path: '/productview/',
+    name: 'productview',
+    component: ProductView
   },
   /*
   {

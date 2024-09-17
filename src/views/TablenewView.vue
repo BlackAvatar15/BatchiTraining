@@ -83,7 +83,7 @@ export default {
         return {
             productName: "",
             category: "",
-
+            
             product: [
                 {
                     productName: 'Frozen Yogurt',
@@ -133,12 +133,13 @@ export default {
 
     methods: {
 
+
         async getProduct() {
             this.product = [];
             await axios.get("http://localhost:8765/trainee-backend/api/products",
 
                 {
-                    method: "get",
+                    method: "GET",
                     headers: {
                         "Content-Type": "application/json",
                         Authorization: "Bearer " + this.$cookies.get('auth_token')
@@ -157,6 +158,8 @@ export default {
             }).catch((err) => {
             })
         },
+        
+        
         async addProduct() {
             await axios.post("http://localhost:8765/trainee-backend/api/products",
                 {
@@ -179,6 +182,8 @@ export default {
             }).catch((err) => {
             })
         },
+        
+        
         async saveItem(data) {
             await axios.post("http://localhost:8765/trainee-backend/api/products/update-product/" + data.id,
                 {
@@ -188,7 +193,7 @@ export default {
                 },
 
                 {
-                    method: "post",
+                    method: "POST",
                     headers: {
                         "Content-Type": "application/json",
                         Authorization: "Bearer " + this.$cookies.get('auth_token')

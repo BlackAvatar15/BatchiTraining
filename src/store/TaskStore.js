@@ -4,7 +4,10 @@ import axios from 'axios'
 export const useTaskStore = defineStore('taskStore', {
 
     state: () => ({
-        tasks: [],
+        id: "",
+        title: "",
+        isPriority: "",
+        //tasks: [], this is for the db.json
         loading: false
     }),
 
@@ -25,61 +28,86 @@ export const useTaskStore = defineStore('taskStore', {
 
 //pinia is ga distribute ning state o data na dae na kaipuhan ning event handling
 
-    actions: {
+    methods: {
+
         async getTasks() {
-            this.loading = true
+            this.tasks = []
 
-            const res = await fetch('http://localhost:3000/tasks')
-            const data = await res.json()
+            await axios.get("http://localhost:8765/trainee-backend/api/",
+                {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: "Bearer " + this.$cookies.get('auth_token')
+                    }
+                }
+            ).then(async (response) => {
+                console.log(response.data);
+                await response.data.forEach((data) => {
+                    this.tasks.push({
+                        is: data.id,
+                        title: data.title,
+                        isPriority: data.isPriority
+                    })
+                })
+            }).catch((err) => {
 
-            this.tasks = data
-            this.loading = false
-        },
-
-        async addTask(task) {
-            this.tasks.push(task)
-
-            const res = await fetch('http://localhost:3000/tasks', {
-                method: 'POST',
-                body: JSON.stringify(task),
-                headers: { 'Content-Type': 'application/json' }
             })
-        
-            if (res.error) {
-                console.log(res.error)
-            }
 
-        },
+        async addTask() {
+
+                await axios.post("http://localhost:8765/trainee-backend/api/product",
+                    {
+                        "title": this.title,
+                        "isPriority": this.isPriority,
+                    },
+
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            Authorization: "Bearer " + this.$cookies.get('auth_token')
+                        }
+                    }
+
+                ).then(async (response) => {
+                    this.title = "";
+                    this.isPriority = "";
+                    await this.getTasks();
+
+                }).catch((error) => {
+                })
+
         async deleteTask(id) {
-            this.tasks = this.tasks.filter(t => {
-                return t.id !== id
-            })
+                this.tasks = this.tasks.filter(t => {
+                    return t.id !== id
+                })
 
-            const res = await fetch('http://localhost:3000/tasks/' + id, {
-                method: 'DELETE',
-            })
+                const res = await fetch('http://localhost:3000/tasks/' + id, {
+                    method: 'DELETE',
+                })
 
-            if (res.error) {
-                console.log(res.error)
-            }
-        },
+                if (res.error) {
+                    console.log(res.error)
+                }
+            },
 
         async togglePrio(id) {
-            const task = this.tasks.find(t => t.id === id)
-            task.isPrio = !task.isPrio
+                const task = this.tasks.find(t => t.id === id)
+                task.isPrio = !task.isPrio
 
-            const res = await fetch('http://localhost:3000/tasks/' + id, {
-                method: 'PATCH',
-                body: JSON.stringify({ isPrio: task.isPrio }),
-                headers: { 'Content-Type': 'application/json' }
-            })
+                const res = await fetch('http://localhost:3000/tasks/' + id, {
+                    method: 'PATCH',
+                    body: JSON.stringify({ isPrio: task.isPrio }),
+                    headers: { 'Content-Type': 'application/json' }
+                })
 
-            if (res.error) {
-                console.log(res.error)
+                if (res.error) {
+                    console.log(res.error)
+                }
+
             }
 
         }
 
-    }
-
-})
+    })
