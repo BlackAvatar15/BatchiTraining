@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import axios from 'axios'
 
 export const useTaskStore = defineStore('taskStore', {
 
@@ -9,11 +10,11 @@ export const useTaskStore = defineStore('taskStore', {
 
     getters: {
         prio() {
-            return this.tasks.filter(t => t.isPriority)//this is to get access to the state
+            return this.tasks.filter(t => t.isPrio) //this is to get access to the state
         },
         prioCount() {
             return this.tasks.reduce((p, c) => {
-                return c.isPriority ? p + 1 : p
+                return c.isPrio ? p + 1 : p
             }, 0)
 
         },
@@ -22,29 +23,60 @@ export const useTaskStore = defineStore('taskStore', {
         }
     },
 
+//pinia is ga distribute ning state o data na dae na kaipuhan ning event handling
+
     actions: {
         async getTasks() {
-            this.loading - true
-            const res = await fetch('http://localhost:3000/tasks') //the res a response for the db.json
+            this.loading = true
+
+            const res = await fetch('http://localhost:3000/tasks')
             const data = await res.json()
 
             this.tasks = data
             this.loading = false
         },
 
-        addTask(task) {
+        async addTask(task) {
             this.tasks.push(task)
 
+            const res = await fetch('http://localhost:3000/tasks', {
+                method: 'POST',
+                body: JSON.stringify(task),
+                headers: { 'Content-Type': 'application/json' }
+            })
+        
+            if (res.error) {
+                console.log(res.error)
+            }
+
         },
-        deleteTask(id) {
+        async deleteTask(id) {
             this.tasks = this.tasks.filter(t => {
                 return t.id !== id
             })
+
+            const res = await fetch('http://localhost:3000/tasks/' + id, {
+                method: 'DELETE',
+            })
+
+            if (res.error) {
+                console.log(res.error)
+            }
         },
 
-        togglePrio(id) {
+        async togglePrio(id) {
             const task = this.tasks.find(t => t.id === id)
-            task.isPriority = !task.isPriority
+            task.isPrio = !task.isPrio
+
+            const res = await fetch('http://localhost:3000/tasks/' + id, {
+                method: 'PATCH',
+                body: JSON.stringify({ isPrio: task.isPrio }),
+                headers: { 'Content-Type': 'application/json' }
+            })
+
+            if (res.error) {
+                console.log(res.error)
+            }
 
         }
 

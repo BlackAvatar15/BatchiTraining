@@ -143,12 +143,7 @@
                             </v-data-table>
 
                         </v-row>
-
-
                     </v-container>
-
-
-
                 </v-card-text>
             </v-main>
 

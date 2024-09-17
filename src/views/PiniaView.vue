@@ -16,22 +16,24 @@
             <v-btn @click="filter = 'prio'">Priority Tasks</v-btn>
         </nav>
 
-        <!--loading-->
+        <!--loading.. this is for the refresh-->
         <div class="loading" v-if="taskStore.loading">Loading Task...</div>
 
 
         <div class="task-list" v-if="filter === 'all'">
-            <p>You have {{ taskStore.totalCount }} task left to do</p>
-            <div v-for="pili in taskStore.tasks">
+            <p>You have {{ totalCount }} task left to do</p>
+            <div v-for="pili in tasks">
                 <TaskDetails :pili="pili" />
             </div>
         </div>
         <div class="task-list" v-if="filter === 'prio'">
-            <p>You have {{ taskStore.prioCount }} task left to do</p>
-            <div v-for="pili in taskStore.prio">
+            <p>You have {{prioCount }} task left to do</p>
+            <div v-for="pili in prio">
                 <TaskDetails :pili="pili" />
             </div>
         </div>
+<!--THIS WILL RESET-->
+        <button @click="taskStore.$reset">Reset State</button>
 
     </main>
 </template>
@@ -41,6 +43,7 @@ import { ref } from 'vue'
 import { useTaskStore } from '@/store/TaskStore'
 import TaskDetails from '@/components/TaskDetails.vue'
 import TaskForm from '@/components/TaskForm.vue'
+import { storeToRefs } from 'pinia';
 
 
 export default {
@@ -53,12 +56,14 @@ export default {
     setup() {
         const taskStore = useTaskStore()
 
+        const { tasks, loading, prio, totalCount, prioCount} = storeToRefs(taskStore)
+
         //fetch tasks
         taskStore.getTasks()
 
         const filter = ref('all')
 
-        return { taskStore, filter }
+        return { taskStore, filter, tasks, loading, prio, totalCount, prioCount }
 
     }
 
@@ -151,5 +156,15 @@ header h1 {
     padding: 4px 8px;
     cursor: pointer;
     font-size: 0.8em;
+}
+
+.loading {
+   max-width: 640px;
+   border: 1px solid #ffd859;
+   background: #ffe9a0;
+   color: #3a3a3a; 
+   padding: 5px 0;
+   text-align: center;
+   margin: 30px auto;
 }
 </style>
